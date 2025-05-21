@@ -11,6 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create('geodata', function (Blueprint $table) {
+            $table->id();
+            $table->string('geom');
+            $table->timestamps();
+        });
+
         Schema::table('data_jalan', function (Blueprint $table) {
             // Menambahkan kolom 'geodata_id' yang merupakan foreign key
             $table->unsignedBigInteger('geodata_id')->nullable();
