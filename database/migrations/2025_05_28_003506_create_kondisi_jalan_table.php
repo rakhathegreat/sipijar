@@ -8,15 +8,16 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('geodata', function (Blueprint $table) {
+        Schema::create('kondisi_jalan', function (Blueprint $table) {
             $table->id();
-            $table->string('geom');
+            $table->string('kondisi')->unique();
+            $table->text('deskripsi')->nullable();
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('geodata');
+        Schema::dropIfExists('kondisi_jalan');
     }
 };

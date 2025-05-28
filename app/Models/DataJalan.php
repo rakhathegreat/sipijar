@@ -8,11 +8,12 @@ use App\Models\KondisiJalan;
 use App\Models\Kelurahan;
 use App\Models\Gambar;
 use App\Models\GeoData;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
 class DataJalan extends Model
 {
-    use HasUuids;
+    use HasUuids, HasFactory;
     protected $table = 'data_jalan';
 
     protected $guarded = [];
